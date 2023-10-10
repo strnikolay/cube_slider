@@ -1,24 +1,13 @@
-
-/**проверка событие
- * в функцию передается событие е
- * проверяется e неравно 0
- * тип события (функция или объект)
- * e.constructor или функция или обект
-*/
 function e(e) {
-  //console.log(e)
-  //console.log(typeof e)
   return (
     null !== e &&
-    /** */
     "object" == typeof e &&
-    /* возможно эта строка не нужна "constructor" in e &&*/
+    "constructor" in e &&
     e.constructor === Object
   );
 }
 
 function t(s = {}, i = {}) {
-  /*console.log(1)*/
   Object.keys(i).forEach((r) => {
     void 0 === s[r]
       ? (s[r] = i[r])
@@ -99,6 +88,7 @@ function n() {
   return t(e, r), e;
 }
 
+
 class a extends Array {
   constructor(e) {
     "number" == typeof e
@@ -127,6 +117,7 @@ function o(e = []) {
 function l(e, t) {
   return Array.prototype.filter.call(e, t);
 }
+
 
 function d(e, t) {
   const s = n(),
@@ -2695,7 +2686,8 @@ const _ = {
       },
     },
   },
-B = {};
+  B = {};
+
 
 class H {
   constructor() {
@@ -2722,7 +2714,6 @@ class H {
         e
       );
     }
-
     const n = this;
     (n.__swiper__ = !0),
       (n.support = x()),
@@ -2820,6 +2811,7 @@ class H {
       n
     );
   }
+
 
   enable() {
     const e = this;
@@ -3102,8 +3094,6 @@ class H {
       : (H.installModule(e), H);
   }
 }
-
-
 function j(e) {
   let { swiper: t, extendParams: s, on: i } = e;
   s({
@@ -3285,27 +3275,26 @@ Object.keys(_).forEach((e) => {
     H.prototype[t] = _[e][t];
   });
 }),
-
-H.use([
-  function (e) {
-    console.log("11")
-    let { swiper: t, on: s, emit: i } = e;
-    const r = n();
-    let a = null,
-    o = null;
-    const l = () => {
-      t &&
-      !t.destroyed &&
-      t.initialized &&
-      (i("beforeResize"), i("resize"));
-    },
-    d = () => {
-      t && !t.destroyed && t.initialized && i("orientationchange");
-    };
-
-    s("init", () => {
-      t.params.resizeObserver && void 0 !== r.ResizeObserver
-          ? t && !t.destroyed && t.initialized &&
+  H.use([
+    function (e) {
+      let { swiper: t, on: s, emit: i } = e;
+      const r = n();
+      let a = null,
+        o = null;
+      const l = () => {
+          t &&
+            !t.destroyed &&
+            t.initialized &&
+            (i("beforeResize"), i("resize"));
+        },
+        d = () => {
+          t && !t.destroyed && t.initialized && i("orientationchange");
+        };
+      s("init", () => {
+        t.params.resizeObserver && void 0 !== r.ResizeObserver
+          ? t &&
+            !t.destroyed &&
+            t.initialized &&
             ((a = new ResizeObserver((e) => {
               o = r.requestAnimationFrame(() => {
                 const { width: s, height: i } = t;
@@ -3323,17 +3312,15 @@ H.use([
             a.observe(t.el))
           : (r.addEventListener("resize", l),
             r.addEventListener("orientationchange", d));
-    }),
-
-    s("destroy", () => {
-        o && r.cancelAnimationFrame(o),
-        a && a.unobserve && t.el && (a.unobserve(t.el), (a = null)),
-        r.removeEventListener("resize", l),
-        r.removeEventListener("orientationchange", d);
-    });
-  },
-
-  function (e) {
+      }),
+        s("destroy", () => {
+          o && r.cancelAnimationFrame(o),
+            a && a.unobserve && t.el && (a.unobserve(t.el), (a = null)),
+            r.removeEventListener("resize", l),
+            r.removeEventListener("orientationchange", d);
+        });
+    },
+    function (e) {
       let { swiper: t, extendParams: s, on: i, emit: r } = e;
       const a = [],
         o = n(),
@@ -3374,7 +3361,7 @@ H.use([
           }),
             a.splice(0, a.length);
         });
-  },
-]);
+    },
+  ]);
   
 export { j as E, H as S };

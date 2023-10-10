@@ -2,18 +2,17 @@ import{S as e,E as o}from"./core.js";
 
 
 
-(el=>{
+(r=>{
     //console.log (e)
-    const s = el.querySelectorAll(".swiper"),
+    const s=r.querySelectorAll(".swiper"),
     t=[];
 
-    //console.log(el)
-    console.log(s)
+    console.log(r)
+    //console.log(c)
     /** r -  */
 
     s.forEach(
         ((r,c)=>{
-            //console.log(r)
             const n=new e(
                 r,
                 {
@@ -25,11 +24,9 @@ import{S as e,E as o}from"./core.js";
                     cubeEffect:{shadow:c===s.length-1}
                 }
             );
-            console.log(n)
             t.push(n)
         })
     );
-    //console.log(t)
 
     const c=t[0],
     n=t.filter((e=>e!==c)),

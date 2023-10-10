@@ -49,7 +49,8 @@ h2{
     transition-property:transform;
     box-sizing:content-box
 }
-.swiper-android .swiper-slide,.swiper-wrapper{
+
+/*.swiper-android .swiper-slide,.swiper-wrapper{
     transform:translate3d(0,0,0)
 }
 .swiper-pointer-events{
@@ -57,7 +58,8 @@ h2{
 }
 .swiper-pointer-events.swiper-vertical{
     touch-action:pan-x
-}
+}*/
+
 .swiper-slide{
     flex-shrink:0;
     width:100%;

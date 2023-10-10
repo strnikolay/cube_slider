@@ -1,0 +1,34 @@
+.swiper-wrapper{
+    position:relative;
+    width:100%;
+    height:100%;
+    z-index:1;
+    display:flex;
+    transition-property:transform;
+    box-sizing:content-box
+}
+
+.swiper-slide{
+    flex-shrink:0;
+    width:100%;
+    height:100%;
+    position:relative;
+    transition-property:transform
+}
+
+.image01{
+    background-image: url(../images/1.jpg)
+}
+
+.image02{
+    background-image: url(../images/2.jpg)
+}
+
+.image03{
+    background-image: url(../images/3.jpg)
+}
+
+.image04{
+    background-image: url(../images/4.jpg)
+}
+
